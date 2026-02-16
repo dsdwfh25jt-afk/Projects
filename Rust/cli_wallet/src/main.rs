@@ -32,17 +32,28 @@ impl Wallet {
         println!("Address: {}",self.address);
         println!("Balance: {}",self.balance);
     }
+//  updated add funds
+     fn add_funds(&mut self, amount: f64) -> Result<String, String>{
+        if amount <= 0.0 {
+            return Err("Amount is not valid ...".to_string());
+        } 
+        else {
+            self.balance += amount; 
+            Ok(format!("Successfully airdrop {} SOL to Your Account , Balance is {}", amount , self.balance)) 
+        }
+    }
+ 
 }
 
 use std::io;
 
 fn main() {
-    let  mut  my_wallet =  Wallet::new("FfUHUW0uwrghagfiahuBG".to_string(),1000.0);
+    let  mut  my_wallet =  Wallet::new("FfUHUW0uwrghagfiahuBG".to_string(),00.0);
 
     println!("Welcome to the Rust CLI wallet simulator !");
 
     loop {
-        println!("\n Choose an action : \n\t 1) Check Balance \n\t 2) Send Funds  \n\t 3) Exit ");
+        println!("\n Choose an action : \n\t 1) Check Balance \n\t 2) Send Funds \n\t 3) Add Funds  \n\t 4) Exit ");
 
         let mut choice = String::new();
         io::stdin().read_line(&mut choice).expect("Failed to read line");
@@ -67,7 +78,21 @@ fn main() {
                     Err(e) => println!("👎 {}",e),
                 }
             }
+// updated to add funds
             "3" => {
+                println!("Enter amount to Add Funds : ");
+                let mut amount_input_add_funds = String::new();
+                io::stdin().read_line(&mut amount_input_add_funds).expect("Failed to read line");
+
+                let amount: f64 = amount_input_add_funds.trim().parse().unwrap_or(0.0);
+
+                match my_wallet.add_funds(amount) {
+                    Ok(message) => println!("👍 {}",message),
+                    Err(e) => println!("👎 {}",e),
+                }
+            }
+
+            "4" => {
                 println!("Goodbye!!!");
                 break;
             }
