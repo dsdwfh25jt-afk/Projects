@@ -1,0 +1,40 @@
+:root {
+  --bg-primary: #0a0e17;
+  --bg-secondary: #12182a;
+  --bg-card: #1a2235;
+  --accent-cyan: #00d4aa;
+  --accent-purple: #7c3aed;
+  --accent-orange: #f59e0b;
+  --text-primary: #f1f5f9;
+  --text-muted: #94a3b8;
+  --border: #2d3a52;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Outfit", system-ui, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  background-image: 
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0, 212, 170, 0.15), transparent),
+    radial-gradient(ellipse 60% 40% at 100% 0%, rgba(124, 58, 237, 0.1), transparent);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input {
+  font-family: "JetBrains Mono", monospace;
+}

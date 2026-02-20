@@ -1,0 +1,13 @@
+[workspace]
+members = [
+    "programs/*"
+]
+resolver = "2"
+
+# Workaround: constant_time_eq 0.4.2 requires edition2024 (Rust 1.85+).
+# Use 0.3.x until Rust is updated.
+[patch.crates-io]
+constant_time_eq = { git = "https://github.com/clements/constant_time_eq", tag = "0.3.0" }
+
+[profile.release]
+overflow-checks = true
