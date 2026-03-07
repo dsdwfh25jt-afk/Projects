@@ -1,1 +1,1 @@
-D:\Projects\rust\cli_wallet\target\debug\cli_wallet.exe: D:\Projects\rust\cli_wallet\src\main.rs
+D:\Projects\Rust\cli_wallet\target\debug\cli_wallet.exe: D:\Projects\Rust\cli_wallet\src\homepage.rs D:\Projects\Rust\cli_wallet\src\lib.rs D:\Projects\Rust\cli_wallet\src\main.rs D:\Projects\Rust\cli_wallet\src\wallet\currency.rs D:\Projects\Rust\cli_wallet\src\wallet.rs

@@ -1,0 +1,1 @@
+D:\Projects\Rust\cli_wallet\target\debug\libcli_wallet.rlib: D:\Projects\Rust\cli_wallet\src\homepage.rs D:\Projects\Rust\cli_wallet\src\lib.rs D:\Projects\Rust\cli_wallet\src\wallet\currency.rs D:\Projects\Rust\cli_wallet\src\wallet.rs
