@@ -1,6 +1,6 @@
 use crate::wallet::Wallet;
 use std::io;
-pub fn homepage( my_wallet: &mut Wallet) {
+pub fn homepage( my_wallet: &mut Wallet , super_wallet : &mut Wallet) {
     loop {
         println!("\n Choose an action : \n\t 1) Check Balance \n\t 2) Send Funds \n\t 3) Add Funds  \n\t 4) Exit ");
 
@@ -36,7 +36,22 @@ pub fn homepage( my_wallet: &mut Wallet) {
                 let amount: f64 = amount_input_add_funds.trim().parse().unwrap_or(0.0);
 
                 match my_wallet.add_funds(amount) {
-                    Ok(message) => println!("👍 {}",message),
+                    Ok(message) =>{
+
+
+
+                        match super_wallet.debit_funds(amount) {
+                            Ok(message) =>{
+                                println!("👍 {}",message);
+                            },
+                            Err(e) => println!("👎 {}",e),
+                        }
+
+
+
+
+                        println!("👍 {}",message);
+                    },
                     Err(e) => println!("👎 {}",e),
                 }
             }

@@ -36,5 +36,15 @@ impl Wallet {
             Ok(format!("Successfully airdrop {} SOL to Your Account , Balance is {}", amount , self.balance)) 
         }
     }
+    // Reduce funds
+    pub fn debit_funds(&mut self, amount: f64) -> Result<String, String>{
+        if amount <= 0.0 {
+            return Err("Amount is not valid ...".to_string());
+        } 
+        else {
+            self.balance -= amount; 
+            Ok(format!("{} SOL has been Deducted from Account {}, Balance is {}", amount ,self.address, self.balance)) 
+        }
+    }
  
 }
